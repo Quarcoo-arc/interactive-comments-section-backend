@@ -9,3 +9,22 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id String @id
+  name String
+  email String
+  createdAt DateTime @default(now())
+  comments Comment[]
+}
+
+model Comment {
+  id Int @id @default(autoincrement())
+  message String
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  replyToId Int?
+  replyTo Comment? @relation( "CommentReplies", fields: [replyToId], references: [id])
+  replies Comment[] @relation("CommentReplies")
+}
+
