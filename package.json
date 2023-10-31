@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev src/index.ts"
+    "dev": "ts-node-dev src/index.ts",
+    "seed": "ts-node-dev prisma/seed.ts"
   },
   "author": "Michael Quarcoo",
   "license": "ISC",
@@ -16,7 +17,12 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@graphql-yoga/node": "^3.9.1",
+    "@pothos/core": "^3.38.0",
+    "@pothos/plugin-prisma": "^3.61.0",
     "@prisma/client": "^5.5.2",
-    "firebase": "^10.5.2"
+    "firebase": "^10.5.2",
+    "graphql": "^16.8.1",
+    "graphql-scalars": "^1.22.4"
   }
 }
