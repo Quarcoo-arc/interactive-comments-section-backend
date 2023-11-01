@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm i && npx prisma generate",
     "dev": "ts-node-dev src/index.ts",
     "seed": "ts-node-dev prisma/seed.ts"
   },
