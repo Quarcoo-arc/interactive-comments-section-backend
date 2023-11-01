@@ -30,5 +30,6 @@ model Comment {
   replyToId Int?
   replyTo Comment? @relation( "CommentReplies", fields: [replyToId], references: [id])
   replies Comment[] @relation("CommentReplies")
+  createdAt DateTime @default(now())
 }
 
