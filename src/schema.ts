@@ -1,14 +1,5 @@
-import { createSchema } from "graphql-yoga";
+import { builder } from "./builder";
+import "./models";
+import "./queries";
 
-export const schema = createSchema({
-  typeDefs: /* GraphQL */ `
-    type Query {
-      hello: String
-    }
-  `,
-  resolvers: {
-    Query: {
-      hello: () => "world",
-    },
-  },
-});
+export const schema = builder.toSchema({});
