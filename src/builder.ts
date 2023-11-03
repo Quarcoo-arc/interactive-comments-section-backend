@@ -12,3 +12,5 @@ export const builder = new SchemaBuilder<{
 }>({ plugins: [PrismaPlugin], prisma: { client: prisma } });
 
 builder.addScalarType("Date", DateResolver, {});
+
+builder.queryType({});
